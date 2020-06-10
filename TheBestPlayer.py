@@ -3,13 +3,13 @@ import requests
 
 x=0
 
-year=input("Enter a year between 1991 and 2016:")
+year=input("Enter a year between 1991-Present:")
 saal=int(year)
 if saal>1990 and saal<2010:
     url="https://en.wikipedia.org/wiki/"+year+"_FIFA_World_Player_of_the_Year"    #Valid till 1991 to 2009
 elif saal>2009 and saal<2017:
     url="https://en.wikipedia.org/wiki/"+year+"_FIFA_Ballon_d%27Or"               #valid from 2010 to 2016
-elif saal>2016 and saal<2020:
+elif saal>2016:
     url="https://en.wikipedia.org/wiki/The_Best_FIFA_Football_Awards_"+year
 r=requests.get(url)
 soup=BeautifulSoup(r.text,"html.parser")
